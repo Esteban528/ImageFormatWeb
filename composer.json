@@ -1,0 +1,21 @@
+{
+    "name": "esteban/imageconv",
+    "description": "imageconverter",
+    "autoload": {
+        "psr-4": {
+            "Esteban\\Pinarsoft\\": "src/",
+            "MVC\\": "./",
+            "Controller\\": "./controller",
+            "Model\\": "./models"
+        }
+    },
+    "authors": [
+        {
+            "name": "esteban",
+            "email": "estebangonza2005@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7"
+    }
+}

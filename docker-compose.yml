@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    image: phppinarmvc:1
+    volumes:
+      - ./:/var/www/html
+      - ./config/php-conf:/usr/local/etc/php
+      - ./config/apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+    environment:
+      APACHE_DOCUMENT_ROOT: /var/www/html/public
+    ports:
+      - 80:80
+    networks:
+      - pinarMVCnetwork
+
+  composer:
+    image: composer:latest
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: ["install"]  # Comando de Composer que quieres ejecutar, por ejemplo, install o update
+
+networks:
+  pinarMVCnetwork:
